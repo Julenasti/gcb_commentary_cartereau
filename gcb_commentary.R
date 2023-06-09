@@ -16,8 +16,8 @@ l_risk <- ggplot() +
     size = 1,
     alpha = .8) +
   xlim(-5, 15) + 
-  xlab("") +
-  ylab("") +
+  xlab(bquote("-"~~~"Aridity"~~~"+")) +
+  ylab("Number of occurrences") +
   theme(
     panel.background = element_blank(),
     panel.grid.minor = element_blank(),
@@ -26,7 +26,8 @@ l_risk <- ggplot() +
     axis.ticks = element_blank(),
     axis.text.y = element_blank(),
     axis.text = element_blank()
-  )
+  ) +
+  labs(tag = "(B)")
 
 # plot high risk
 h_risk <- ggplot() +
@@ -53,16 +54,14 @@ h_risk <- ggplot() +
     axis.ticks = element_blank(),
     axis.text.y = element_blank(),
     axis.text = element_blank()
-    )
+    ) +
+  labs(tag = "(C)")
 
-fig <- l_risk / h_risk +
-  plot_annotation(
-    tag_levels = "A", tag_prefix = "(", tag_suffix = ")"
-    )
+fig <- l_risk + h_risk
 
 ggsave(
   plot = fig,
   "fig.png",
-  width = 4, height = 4,
+  width = 7.5, height = 2.3,
   dpi = 600
 )
