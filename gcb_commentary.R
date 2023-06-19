@@ -25,9 +25,10 @@ l_risk <- ggplot() +
     axis.line.x = element_line(color = "black", size = .6),
     axis.ticks = element_blank(),
     axis.text.y = element_blank(),
-    axis.text = element_blank()
+    axis.text = element_blank(),
+    plot.tag = element_text(face = "bold")
   ) +
-  labs(tag = "(B)")
+  labs(tag = "(b)")
 
 # plot high risk
 h_risk <- ggplot() +
@@ -53,9 +54,10 @@ h_risk <- ggplot() +
     axis.line.x = element_line(color = "black", size = .6),
     axis.ticks = element_blank(),
     axis.text.y = element_blank(),
-    axis.text = element_blank()
+    axis.text = element_blank(),
+    plot.tag = element_text(face = "bold")
     ) +
-  labs(tag = "(C)")
+  labs(tag = "(c)")
 
 fig <- l_risk + h_risk
 
